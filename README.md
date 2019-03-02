@@ -1,1 +1,1 @@
-# MessangerProject
+# Student Messenger App
