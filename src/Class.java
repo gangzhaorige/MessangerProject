@@ -15,7 +15,7 @@ public class Class {
     private List<Student> listOfStudent;
     private String className;
     
-    public Class(List<Student> listOfStudent,String className){
+    public Class(String className){
         listOfStudent = new ArrayList<>();
         this.className = className;
     }
@@ -38,6 +38,32 @@ public class Class {
                 listOfStudent.remove(i);
             }
         }
+    }
+    public boolean isEnrolled(String id){
+        for(int i = 0; i < listOfStudent.size(); i++){
+            if(listOfStudent.get(i).getId().equals(id)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public String getNumberByName(String name){
+        for(int i = 0; i < listOfStudent.size(); i++){
+            if(listOfStudent.get(i).getName().equals(name)){
+                return listOfStudent.get(i).getNumber();
+            }
+        }
+        return "";
+    }
+    
+    @Override
+    public String toString(){
+        String temp = "";
+        for(int i = 0; i < listOfStudent.size(); i++){
+            temp = temp + "Name: " + listOfStudent.get(i).getName() + "\n";
+        }
+        return temp;
     }
     
 }
